@@ -9,7 +9,7 @@ output:
   md_document: default
 ---
 
-```{r setup, include=FALSE}
+```{R setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
 hook2 <- function(x){ gsub("```\n+```\n", "\n", x) }
@@ -22,13 +22,23 @@ if(!requireNamespace("PharmacoGx", quietly = TRUE)){
   pak::pkg_install("PharmacoGx")
 }
 
+if(!requireNamespace("qs", quietly = TRUE)){
+  pak::pkg_install("qs")
+}
+
+if(!requireNamespace("data.table", quietly = TRUE)){
+  pak::pkg_install("data.table")
+}
+library(PharmacoGx)
+library(qs)
+library(data.table)
 # make data directory
 dir.create("./data", showWarnings = FALSE)
 ```
 
 ## Download and Load Data
 
-```{r listold, echo=FALSE}
+```{R listold, echo=FALSE}
 
 available <- PharmacoGx::availablePSets()
 print("Available PharmacoSets")
@@ -41,7 +51,7 @@ pset_list <- list(
 
 ```
 
-```{r download_old, echo=FALSE}
+```{R download_old, echo=FALSE}
 results <- sapply(names(pset_list), function(pset){
   if(!file.exists(paste0("./data/old_", pset, "_PSet.RDS"))){
     pset <- PharmacoGx::downloadPSet(
@@ -56,7 +66,7 @@ results <- sapply(names(pset_list), function(pset){
 
 ```
 
-```{r load_old, echo=FALSE}
+```{R load_old, echo=FALSE}
 for(pset in names(pset_list)){
   # read in the pset into the environment
   message(paste0("Reading in old", pset))
@@ -74,7 +84,7 @@ for(pset in names(pset_list)){
 
 ```
 
-```{r download_new, echo=FALSE}
+```{R download_new, echo=FALSE}
 if(!file.exists("./data/CCLE_PSet.RDS")){
   bash_command <- "gsutil cp gs://orcestradata/CCLE-Pharmacoset_Snakemake/results/CCLE_PSet.RDS ./data/CCLE_PSet.RDS"
   system(bash_command)
@@ -91,7 +101,7 @@ if(!file.exists("./data/GDSC_PSet.RDS")){
 }
 ```
 
-```{r load_new, echo=FALSE, results='hide'}
+```{R load_new, echo=FALSE, results='hide'}
 
 for(pset in names(pset_list)){
 
@@ -110,7 +120,7 @@ for(pset in names(pset_list)){
 }
 ```
 
-```{r, echo=FALSE}
+```{R, echo=FALSE}
 # HELPER FUNCTIONS
 
 print_header <- function(..., length_of_line){
@@ -145,13 +155,13 @@ print_treatment_info <- function(data, old_or_new){
 ## CCLE Logs
 
 ### NEW CCLE PSet
-```{r quick_view_CCLE_new, echo=FALSE}
+```{R quick_view_CCLE_new, echo=FALSE}
 show(new_CCLE)
 ```
 
 ### OLD CCLE PSet
 
-```{r quick_view_CCLE_old, echo=FALSE}
+```{R quick_view_CCLE_old, echo=FALSE}
 CCLE <- PharmacoGx::updateObject(CCLE)
 show(CCLE)
 ```
@@ -159,31 +169,31 @@ show(CCLE)
 ### SampleInfo
 
 **Old Sample Info**
-```{r sampleinfo_old, echo=FALSE}
+```{R sampleinfo_old, echo=FALSE}
 print_treatment_info(CCLE, "Old")
 ```
 
 **New Sample Info**
-```{r sampleinfo_new, echo=FALSE}
+```{R sampleinfo_new, echo=FALSE}
 print_treatment_info(new_CCLE, "New")
 ```
 
 ### TreatmentInfo
 
 **Old Treatment Info**
-```{r treatmentinfo_old, echo=FALSE}
+```{R treatmentinfo_old, echo=FALSE}
 print_treatment_info(CCLE, "Old")
 ```
 
 
 **New Treatment Info**
-```{r treatmentinfo_new, echo=FALSE}
+```{R treatmentinfo_new, echo=FALSE}
 print_treatment_info(new_CCLE, "New")
 ```
 
 
 
-```{r molecular, echo=FALSE}
+```{R molecular, echo=FALSE}
 mol_summary <- function(mol){
   if(is.list(mol)){
     print(names(mol))
@@ -295,41 +305,41 @@ compare_treatmentResponse <- function(old, new){
 ### MolecularProfiles
 
 
-```{r, echo=FALSE}
+```{R, echo=FALSE}
 old_molecular <- PharmacoGx::molecularProfiles(CCLE)
 new_molecular <- PharmacoGx::molecularProfiles(new_CCLE)
 ```
 
 #### RNA / Microarray
 
-```{r microarray, echo=FALSE}
+```{R microarray, echo=FALSE}
 display_molecular_by_annotation(old_molecular, new_molecular, c("microarray", "rna"))
 ```
 
 #### RNASeq
 
-```{r rnaseq, echo=FALSE}
+```{R rnaseq, echo=FALSE}
 display_molecular_by_annotation(old_molecular, new_molecular, "rnaseq")
 ```
 
 
 #### CNV
 
-```{r cnv, echo=FALSE}
+```{R cnv, echo=FALSE}
 display_molecular_by_annotation(old_molecular, new_molecular, "cnv")
 ```
 
 
 #### Mutation
 
-```{r mutation, echo=FALSE}
+```{R mutation, echo=FALSE}
 display_molecular_by_annotation(old_molecular, new_molecular, c("mutation", "mut"))
 ```
 
 
 ### TreatmentResponse
 
-```{r treatment_response, echo=FALSE}
+```{R treatment_response, echo=FALSE}
 
 old_treatmentResponse <- PharmacoGx::treatmentResponse(CCLE)
 new_treatmentResponse <- PharmacoGx::treatmentResponse(new_CCLE)
@@ -342,12 +352,12 @@ compare_treatmentResponse(old_treatmentResponse, new_treatmentResponse)
 ## GDSC Logs
 
 ### NEW GDSC PSet
-```{r quick_view_GDSC_new, echo=FALSE}
+```{R quick_view_GDSC_new, echo=FALSE}
 show(new_GDSC)
 ```
 
 ### OLD GDSC PSet
-```{r quick_view_GDSC_old, echo=FALSE}
+```{R quick_view_GDSC_old, echo=FALSE}
 GDSC <- PharmacoGx::updateObject(GDSC)
 show(GDSC)
 ```
@@ -355,67 +365,67 @@ show(GDSC)
 ### SampleInfo
 
 **Old Sample Info**
-```{r sampleinfo_old_GDSC, echo=FALSE}
+```{R sampleinfo_old_GDSC, echo=FALSE}
 print_sample_info(GDSC, "Old")
 ```
 
 **New Sample Info**
-```{r sampleinfo_new_GDSC, echo=FALSE}
+```{R sampleinfo_new_GDSC, echo=FALSE}
 print_sample_info(new_GDSC, "New")
 ```
 
 ### TreatmentInfo
 
 **Old Treatment Info**
-```{r treatmentinfo_old_GDSC, echo=FALSE}
+```{R treatmentinfo_old_GDSC, echo=FALSE}
 print_treatment_info(GDSC, "Old")
 ```
 
 **New Treatment Info**
-```{r treatmentinfo_new_GDSC, echo=FALSE}
+```{R treatmentinfo_new_GDSC, echo=FALSE}
 print_treatment_info(new_GDSC, "New")
 ```
 
 ### MolecularProfiles
 
-```{r, echo=FALSE}
+```{R, echo=FALSE}
 old_molecular <- PharmacoGx::molecularProfiles(GDSC)
 new_molecular <- PharmacoGx::molecularProfiles(new_GDSC)
 ```
 
 #### RNA / Microarray
 
-```{r microarray_GDSC, echo=FALSE}
+```{R microarray_GDSC, echo=FALSE}
 display_molecular_by_annotation(old_molecular, new_molecular, c("microarray", "rna"))
 ```
 
 #### RNASeq
 
 
-```{r rnaseq_GDSC, echo=FALSE}
+```{R rnaseq_GDSC, echo=FALSE}
 display_molecular_by_annotation(old_molecular, new_molecular, "rnaseq")
 ```
 
 #### CNV
 
-```{r cnv_GDSC, echo=FALSE}
+```{R cnv_GDSC, echo=FALSE}
 display_molecular_by_annotation(old_molecular, new_molecular, "cnv")
 ```
 
 #### Mutation
 
-```{r mutation_GDSC, echo=FALSE}
+```{R mutation_GDSC, echo=FALSE}
 display_molecular_by_annotation(old_molecular, new_molecular, c("mutation", "mut"))
 ```
 
 ### TreatmentResponse
 
-```{r treatment_response_GDSC, echo=FALSE}
+```{R treatment_response_GDSC, echo=FALSE}
 old_treatmentResponse <- PharmacoGx::treatmentResponse(GDSC)
 new_treatmentResponse <- PharmacoGx::treatmentResponse(new_GDSC)
 ```
 
-```{r treatment_response_GDSC_compare, echo=FALSE}
+```{R treatment_response_GDSC_compare, echo=FALSE}
 compare_treatmentResponse(old_treatmentResponse, new_treatmentResponse)
 ```
 
@@ -424,13 +434,13 @@ compare_treatmentResponse(old_treatmentResponse, new_treatmentResponse)
 ## gCSI Logs
 
 ### NEW gCSI PSet
-```{r quick_view_gCSI_new, echo=FALSE}
+```{R quick_view_gCSI_new, echo=FALSE}
 show(new_gCSI)
 ```
 
 ### OLD gCSI PSet
 
-```{r quick_view_gCSI_old, echo=FALSE}
+```{R quick_view_gCSI_old, echo=FALSE}
 gCSI <- PharmacoGx::updateObject(gCSI)
 show(gCSI)
 ```
@@ -438,65 +448,65 @@ show(gCSI)
 ### SampleInfo
 
 **Old Sample Info**
-```{r sampleinfo_old_gCSI, echo=FALSE}
+```{R sampleinfo_old_gCSI, echo=FALSE}
 print_sample_info(gCSI, "Old")
 ```
 
 **New Sample Info**
-```{r sampleinfo_new_gCSI, echo=FALSE}
+```{R sampleinfo_new_gCSI, echo=FALSE}
 print_sample_info(new_gCSI, "New")
 ```
 
 ### TreatmentInfo
 
 **Old Treatment Info**
-```{r treatmentinfo_old_gCSI, echo=FALSE}
+```{R treatmentinfo_old_gCSI, echo=FALSE}
 print_treatment_info(gCSI, "Old")
 ```
 
 **New Treatment Info**
-```{r treatmentinfo_new_gCSI, echo=FALSE}
+```{R treatmentinfo_new_gCSI, echo=FALSE}
 print_treatment_info(new_gCSI, "New")
 ```
 
 ### MolecularProfiles
 
-```{r, echo=FALSE}
+```{R, echo=FALSE}
 old_molecular <- PharmacoGx::molecularProfiles(gCSI)
 new_molecular <- PharmacoGx::molecularProfiles(new_gCSI)
 ```
 
 #### RNA / Microarray
 
-```{r microarray_gCSI, echo=FALSE}
+```{R microarray_gCSI, echo=FALSE}
 display_molecular_by_annotation(old_molecular, new_molecular, c("microarray", "rna"))
 ```
 
 
 #### RNASeq
 
-```{r rnaseq_gCSI, echo=FALSE}
+```{R rnaseq_gCSI, echo=FALSE}
 display_molecular_by_annotation(old_molecular, new_molecular, "rnaseq")
 ```
 
 
 #### CNV
-```{r cnv_gCSI, echo=FALSE}
+```{R cnv_gCSI, echo=FALSE}
 display_molecular_by_annotation(old_molecular, new_molecular, "cnv")
 ```
 
 #### Mutation
-```{r mutation_gCSI, echo=FALSE}
+```{R mutation_gCSI, echo=FALSE}
 display_molecular_by_annotation(old_molecular, new_molecular, c("mutation", "mut"))
 ```
 
 ### TreatmentResponse
 
-```{r treatment_response_gCSI, echo=FALSE}
+```{R treatment_response_gCSI, echo=FALSE}
 old_treatmentResponse <- PharmacoGx::treatmentResponse(gCSI)
 new_treatmentResponse <- PharmacoGx::treatmentResponse(new_gCSI)
 ```
 
-```{r treatment_response_gCSI_compare, echo=FALSE}
+```{R treatment_response_gCSI_compare, echo=FALSE}
 compare_treatmentResponse(old_treatmentResponse, new_treatmentResponse)
 ```

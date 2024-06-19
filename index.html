@@ -1486,8 +1486,11 @@ border-radius: 0px;
 <h2>Download and Load Data</h2>
 <pre><code>## [1] &quot;Available PharmacoSets&quot;
 
-##  [1] &quot;GDSC_2020(v2-8.2)&quot; &quot;FIMM_2016&quot;         &quot;Tavor_2020&quot;        &quot;NCI60_2021&quot;        &quot;UHNBreast_2019&quot;    &quot;GDSC_2020(v1-8.2)&quot; &quot;PRISM_2020&quot;        &quot;BeatAML_2018&quot;     
-##  [9] &quot;gCSI_2019&quot;         &quot;CTRPv2_2015&quot;       &quot;GRAY_2017&quot;         &quot;CCLE_2015&quot;         &quot;PDTX_2019&quot;         &quot;GBM_scr2&quot;          &quot;GBM_scr3&quot;</code></pre>
+##  [1] &quot;GDSC_2020(v2-8.2)&quot; &quot;FIMM_2016&quot;         &quot;Tavor_2020&quot;       
+##  [4] &quot;NCI60_2021&quot;        &quot;UHNBreast_2019&quot;    &quot;GDSC_2020(v1-8.2)&quot;
+##  [7] &quot;PRISM_2020&quot;        &quot;BeatAML_2018&quot;      &quot;gCSI_2019&quot;        
+## [10] &quot;CTRPv2_2015&quot;       &quot;GRAY_2017&quot;         &quot;CCLE_2015&quot;        
+## [13] &quot;PDTX_2019&quot;         &quot;GBM_scr2&quot;          &quot;GBM_scr3&quot;</code></pre>
 <pre><code>## Reading in oldGDSC
 
 ## Reading in oldCCLE
@@ -1565,9 +1568,13 @@ border-radius: 0px;
 ## Num Samples in Old Treatment Info: 24
 
 ## [1] &quot;Treatment Info Columns&quot;
-##  [1] &quot;Compound..code.or.generic.name.&quot; &quot;Compound..brand.name.&quot;           &quot;Target.s.&quot;                       &quot;Mechanism.of.action&quot;             &quot;Class&quot;                          
-##  [6] &quot;Highest.Phase&quot;                   &quot;Organization&quot;                    &quot;Compound&quot;                        &quot;treatmentid&quot;                     &quot;drug.name&quot;                      
-## [11] &quot;smiles&quot;                          &quot;inchikey&quot;                        &quot;cid&quot;                             &quot;FDA&quot;</code></pre>
+##  [1] &quot;Compound..code.or.generic.name.&quot; &quot;Compound..brand.name.&quot;          
+##  [3] &quot;Target.s.&quot;                       &quot;Mechanism.of.action&quot;            
+##  [5] &quot;Class&quot;                           &quot;Highest.Phase&quot;                  
+##  [7] &quot;Organization&quot;                    &quot;Compound&quot;                       
+##  [9] &quot;treatmentid&quot;                     &quot;drug.name&quot;                      
+## [11] &quot;smiles&quot;                          &quot;inchikey&quot;                       
+## [13] &quot;cid&quot;                             &quot;FDA&quot;</code></pre>
 <p><strong>New Sample Info</strong></p>
 <pre><code>## --------------------------------------------------------------------------------
 ## New Treatment Info
@@ -1576,12 +1583,20 @@ border-radius: 0px;
 ## Num Samples in New Treatment Info: 24
 
 ## [1] &quot;Treatment Info Columns&quot;
-##  [1] &quot;CCLE.treatmentid&quot;                 &quot;CCLE.raw_treatmentid&quot;             &quot;CCLE.target&quot;                      &quot;CCLE.mechanismOfAction&quot;           &quot;CCLE.class&quot;                      
-##  [6] &quot;CCLE.highestClinicalTrialPhase&quot;   &quot;CCLE.treatmentSourceOrganization&quot; &quot;unichem.ChEMBL&quot;                   &quot;pubchem.CID&quot;                      &quot;pubchem.MolecularFormula&quot;        
-## [11] &quot;pubchem.CanonicalSMILES&quot;          &quot;pubchem.InChIKey&quot;                 &quot;pubchem.Title&quot;                    &quot;unichem.ChEBI&quot;                    &quot;unichem.clinicaltrials&quot;          
-## [16] &quot;unichem.DrugBank&quot;                 &quot;unichem.FDA_SRS&quot;                  &quot;unichem.LINCS&quot;                    &quot;unichem.PharmGKB&quot;                 &quot;unichem.rxnorm&quot;                  
-## [21] &quot;chembl.parent_molecule_chembl_id&quot; &quot;chembl.target_chembl_id&quot;          &quot;chembl.record_id&quot;                 &quot;chembl.mechanism_of_action&quot;       &quot;chembl.mechanism_comment&quot;        
-## [26] &quot;chembl.action_type&quot;               &quot;treatmentid&quot;                      &quot;unique.treatmentid&quot;</code></pre>
+##  [1] &quot;CCLE.treatmentid&quot;                 &quot;CCLE.raw_treatmentid&quot;            
+##  [3] &quot;CCLE.target&quot;                      &quot;CCLE.mechanismOfAction&quot;          
+##  [5] &quot;CCLE.class&quot;                       &quot;CCLE.highestClinicalTrialPhase&quot;  
+##  [7] &quot;CCLE.treatmentSourceOrganization&quot; &quot;unichem.ChEMBL&quot;                  
+##  [9] &quot;pubchem.CID&quot;                      &quot;pubchem.MolecularFormula&quot;        
+## [11] &quot;pubchem.CanonicalSMILES&quot;          &quot;pubchem.InChIKey&quot;                
+## [13] &quot;pubchem.Title&quot;                    &quot;unichem.ChEBI&quot;                   
+## [15] &quot;unichem.clinicaltrials&quot;           &quot;unichem.DrugBank&quot;                
+## [17] &quot;unichem.FDA_SRS&quot;                  &quot;unichem.LINCS&quot;                   
+## [19] &quot;unichem.PharmGKB&quot;                 &quot;unichem.rxnorm&quot;                  
+## [21] &quot;chembl.parent_molecule_chembl_id&quot; &quot;chembl.target_chembl_id&quot;         
+## [23] &quot;chembl.record_id&quot;                 &quot;chembl.mechanism_of_action&quot;      
+## [25] &quot;chembl.mechanism_comment&quot;         &quot;chembl.action_type&quot;              
+## [27] &quot;treatmentid&quot;                      &quot;unique.treatmentid&quot;</code></pre>
 </div>
 <div id="treatmentinfo" class="section level3">
 <h3>TreatmentInfo</h3>
@@ -1593,9 +1608,13 @@ border-radius: 0px;
 ## Num Samples in Old Treatment Info: 24
 
 ## [1] &quot;Treatment Info Columns&quot;
-##  [1] &quot;Compound..code.or.generic.name.&quot; &quot;Compound..brand.name.&quot;           &quot;Target.s.&quot;                       &quot;Mechanism.of.action&quot;             &quot;Class&quot;                          
-##  [6] &quot;Highest.Phase&quot;                   &quot;Organization&quot;                    &quot;Compound&quot;                        &quot;treatmentid&quot;                     &quot;drug.name&quot;                      
-## [11] &quot;smiles&quot;                          &quot;inchikey&quot;                        &quot;cid&quot;                             &quot;FDA&quot;</code></pre>
+##  [1] &quot;Compound..code.or.generic.name.&quot; &quot;Compound..brand.name.&quot;          
+##  [3] &quot;Target.s.&quot;                       &quot;Mechanism.of.action&quot;            
+##  [5] &quot;Class&quot;                           &quot;Highest.Phase&quot;                  
+##  [7] &quot;Organization&quot;                    &quot;Compound&quot;                       
+##  [9] &quot;treatmentid&quot;                     &quot;drug.name&quot;                      
+## [11] &quot;smiles&quot;                          &quot;inchikey&quot;                       
+## [13] &quot;cid&quot;                             &quot;FDA&quot;</code></pre>
 <p><strong>New Treatment Info</strong></p>
 <pre><code>## --------------------------------------------------------------------------------
 ## New Treatment Info
@@ -1604,12 +1623,20 @@ border-radius: 0px;
 ## Num Samples in New Treatment Info: 24
 
 ## [1] &quot;Treatment Info Columns&quot;
-##  [1] &quot;CCLE.treatmentid&quot;                 &quot;CCLE.raw_treatmentid&quot;             &quot;CCLE.target&quot;                      &quot;CCLE.mechanismOfAction&quot;           &quot;CCLE.class&quot;                      
-##  [6] &quot;CCLE.highestClinicalTrialPhase&quot;   &quot;CCLE.treatmentSourceOrganization&quot; &quot;unichem.ChEMBL&quot;                   &quot;pubchem.CID&quot;                      &quot;pubchem.MolecularFormula&quot;        
-## [11] &quot;pubchem.CanonicalSMILES&quot;          &quot;pubchem.InChIKey&quot;                 &quot;pubchem.Title&quot;                    &quot;unichem.ChEBI&quot;                    &quot;unichem.clinicaltrials&quot;          
-## [16] &quot;unichem.DrugBank&quot;                 &quot;unichem.FDA_SRS&quot;                  &quot;unichem.LINCS&quot;                    &quot;unichem.PharmGKB&quot;                 &quot;unichem.rxnorm&quot;                  
-## [21] &quot;chembl.parent_molecule_chembl_id&quot; &quot;chembl.target_chembl_id&quot;          &quot;chembl.record_id&quot;                 &quot;chembl.mechanism_of_action&quot;       &quot;chembl.mechanism_comment&quot;        
-## [26] &quot;chembl.action_type&quot;               &quot;treatmentid&quot;                      &quot;unique.treatmentid&quot;</code></pre>
+##  [1] &quot;CCLE.treatmentid&quot;                 &quot;CCLE.raw_treatmentid&quot;            
+##  [3] &quot;CCLE.target&quot;                      &quot;CCLE.mechanismOfAction&quot;          
+##  [5] &quot;CCLE.class&quot;                       &quot;CCLE.highestClinicalTrialPhase&quot;  
+##  [7] &quot;CCLE.treatmentSourceOrganization&quot; &quot;unichem.ChEMBL&quot;                  
+##  [9] &quot;pubchem.CID&quot;                      &quot;pubchem.MolecularFormula&quot;        
+## [11] &quot;pubchem.CanonicalSMILES&quot;          &quot;pubchem.InChIKey&quot;                
+## [13] &quot;pubchem.Title&quot;                    &quot;unichem.ChEBI&quot;                   
+## [15] &quot;unichem.clinicaltrials&quot;           &quot;unichem.DrugBank&quot;                
+## [17] &quot;unichem.FDA_SRS&quot;                  &quot;unichem.LINCS&quot;                   
+## [19] &quot;unichem.PharmGKB&quot;                 &quot;unichem.rxnorm&quot;                  
+## [21] &quot;chembl.parent_molecule_chembl_id&quot; &quot;chembl.target_chembl_id&quot;         
+## [23] &quot;chembl.record_id&quot;                 &quot;chembl.mechanism_of_action&quot;      
+## [25] &quot;chembl.mechanism_comment&quot;         &quot;chembl.action_type&quot;              
+## [27] &quot;treatmentid&quot;                      &quot;unique.treatmentid&quot;</code></pre>
 </div>
 <div id="molecularprofiles" class="section level3">
 <h3>MolecularProfiles</h3>
@@ -1745,13 +1772,27 @@ border-radius: 0px;
 ## [1] &quot;Number of samples: 503&quot;
 ## [1] &quot;Total number of experiments: 11670&quot;
 ## [1] &quot;Profiles DataFrame: &quot;
-##                        ic50_published aac_published amax_published aac_recomputed ic50_recomputed        HS    E_inf     EC50
-## drugid_AEW541_1321N1              262     0.0873750            164     0.09800818       16.332263 0.9169196 38.47711 3.295213
-## drugid_AEW541_22Rv1                78     0.2205000            361     0.21323823        2.034710 0.8374151 13.95620 1.376470
-## drugid_AEW541_42-MG-BA             90     0.1144375            309     0.12151155        2.687672 2.9099240 36.28378 1.723197
-## drugid_AEW541_5637                173     0.1243550            300     0.10877695        5.192732 1.0883419  0.00000 5.192732
-## drugid_AEW541_639-V                59     0.1936250            234     0.18344576        5.113119 0.6991911 30.29307 1.350123
-## drugid_AEW541_697                 149     0.1087625            367     0.10518547        4.254253 1.5039911  0.00000 4.254253
+##                        ic50_published aac_published amax_published
+## drugid_AEW541_1321N1              262     0.0873750            164
+## drugid_AEW541_22Rv1                78     0.2205000            361
+## drugid_AEW541_42-MG-BA             90     0.1144375            309
+## drugid_AEW541_5637                173     0.1243550            300
+## drugid_AEW541_639-V                59     0.1936250            234
+## drugid_AEW541_697                 149     0.1087625            367
+##                        aac_recomputed ic50_recomputed        HS    E_inf
+## drugid_AEW541_1321N1       0.09800818       16.332263 0.9169196 38.47711
+## drugid_AEW541_22Rv1        0.21323823        2.034710 0.8374151 13.95620
+## drugid_AEW541_42-MG-BA     0.12151155        2.687672 2.9099240 36.28378
+## drugid_AEW541_5637         0.10877695        5.192732 1.0883419  0.00000
+## drugid_AEW541_639-V        0.18344576        5.113119 0.6991911 30.29307
+## drugid_AEW541_697          0.10518547        4.254253 1.5039911  0.00000
+##                            EC50
+## drugid_AEW541_1321N1   3.295213
+## drugid_AEW541_22Rv1    1.376470
+## drugid_AEW541_42-MG-BA 1.723197
+## drugid_AEW541_5637     5.192732
+## drugid_AEW541_639-V    1.350123
+## drugid_AEW541_697      4.254253
 
 ## --------------------------------------------------------------------------------
 ## New Treatment Response
@@ -1764,14 +1805,30 @@ border-radius: 0px;
 ## [1] &quot;Total number of experiments: 87308&quot;
 ## [1] &quot;Profiles/Summary Assay: &quot;
 ## Key: &lt;treatmentid, sampleid&gt;
-##    treatmentid sampleid        HS     E_inf       EC50         Rsq aac_recomputed ic50_recomputed published_EC50 published_IC50 published_Amax published_ActArea
-##         &lt;char&gt;   &lt;char&gt;     &lt;num&gt;     &lt;num&gt;      &lt;num&gt;       &lt;num&gt;          &lt;num&gt;           &lt;num&gt;          &lt;num&gt;          &lt;num&gt;          &lt;num&gt;             &lt;num&gt;
-## 1:       17AAG   1321N1 1.0000000 27.000000 0.00250000 -0.04905813       66.73343     0.005434783     0.19367672     0.22807844      -72.12381            3.0302
-## 2:       17AAG    22Rv1 1.4100034 20.112878 0.24562282  0.97167493       34.51985     0.353809081     0.26721454     0.32970169      -76.30148            3.0622
-## 3:       17AAG 42-MG-BA 0.5788574  9.487915 0.02413061  0.69470957       61.13015     0.034708865     0.05208059     0.05303809      -80.37766            5.0587
-## 4:       17AAG     5637 1.0000000  8.000000 0.08000000  0.93019991       52.25685     0.095238095     0.06090715     0.07082279      -91.65148            3.5350
-## 5:       17AAG     639V 2.2293532  9.995242 0.12816153  0.97932740       46.10002     0.141646073     0.14792989     0.15009449      -89.63907            3.7820
-## 6:       17AAG      697 1.0000000  8.000000 0.25000000  0.90021928       39.74315     0.297619048     0.37833494     0.42257124      -91.79781            3.6605</code></pre>
+##    treatmentid sampleid        HS     E_inf       EC50         Rsq
+##         &lt;char&gt;   &lt;char&gt;     &lt;num&gt;     &lt;num&gt;      &lt;num&gt;       &lt;num&gt;
+## 1:       17AAG   1321N1 1.0000000 27.000000 0.00250000 -0.04905813
+## 2:       17AAG    22Rv1 1.4100034 20.112878 0.24562282  0.97167493
+## 3:       17AAG 42-MG-BA 0.5788574  9.487915 0.02413061  0.69470957
+## 4:       17AAG     5637 1.0000000  8.000000 0.08000000  0.93019991
+## 5:       17AAG     639V 2.2293532  9.995242 0.12816153  0.97932740
+## 6:       17AAG      697 1.0000000  8.000000 0.25000000  0.90021928
+##    aac_recomputed ic50_recomputed published_EC50 published_IC50 published_Amax
+##             &lt;num&gt;           &lt;num&gt;          &lt;num&gt;          &lt;num&gt;          &lt;num&gt;
+## 1:       66.73343     0.005434783     0.19367672     0.22807844      -72.12381
+## 2:       34.51985     0.353809081     0.26721454     0.32970169      -76.30148
+## 3:       61.13015     0.034708865     0.05208059     0.05303809      -80.37766
+## 4:       52.25685     0.095238095     0.06090715     0.07082279      -91.65148
+## 5:       46.10002     0.141646073     0.14792989     0.15009449      -89.63907
+## 6:       39.74315     0.297619048     0.37833494     0.42257124      -91.79781
+##    published_ActArea
+##                &lt;num&gt;
+## 1:            3.0302
+## 2:            3.0622
+## 3:            5.0587
+## 4:            3.5350
+## 5:            3.7820
+## 6:            3.6605</code></pre>
 </div>
 </div>
 <div id="gdsc-logs" class="section level2">
@@ -1853,11 +1910,26 @@ border-radius: 0px;
 ## Num Samples in Old: 1084
 
 ## [1] &quot;Sample Info Columns&quot;
-##  [1] &quot;Sample.Name&quot;                               &quot;COSMIC.identifier&quot;                         &quot;Whole.Exome.Sequencing..WES.&quot;              &quot;Copy.Number.Alterations..CNA.&quot;            
-##  [5] &quot;Gene.Expression&quot;                           &quot;Methylation&quot;                               &quot;Drug..Response&quot;                            &quot;GDSC..Tissue.descriptor.1&quot;                
-##  [9] &quot;GDSC..Tissue..descriptor.2&quot;                &quot;Cancer.Type...matching.TCGA.label.&quot;        &quot;Microsatellite...instability.Status..MSI.&quot; &quot;Screen.Medium&quot;                            
-## [13] &quot;Growth.Properties&quot;                         &quot;sampleid&quot;                                  &quot;tissueid&quot;                                  &quot;Cellosaurus.Disease.Type&quot;                 
-## [17] &quot;Cellosaurus.Accession.id&quot;                  &quot;PharmacoDB.id&quot;                             &quot;unique.tissueid.fromstudies&quot;               &quot;CellLine.Type&quot;                            
+##  [1] &quot;Sample.Name&quot;                              
+##  [2] &quot;COSMIC.identifier&quot;                        
+##  [3] &quot;Whole.Exome.Sequencing..WES.&quot;             
+##  [4] &quot;Copy.Number.Alterations..CNA.&quot;            
+##  [5] &quot;Gene.Expression&quot;                          
+##  [6] &quot;Methylation&quot;                              
+##  [7] &quot;Drug..Response&quot;                           
+##  [8] &quot;GDSC..Tissue.descriptor.1&quot;                
+##  [9] &quot;GDSC..Tissue..descriptor.2&quot;               
+## [10] &quot;Cancer.Type...matching.TCGA.label.&quot;       
+## [11] &quot;Microsatellite...instability.Status..MSI.&quot;
+## [12] &quot;Screen.Medium&quot;                            
+## [13] &quot;Growth.Properties&quot;                        
+## [14] &quot;sampleid&quot;                                 
+## [15] &quot;tissueid&quot;                                 
+## [16] &quot;Cellosaurus.Disease.Type&quot;                 
+## [17] &quot;Cellosaurus.Accession.id&quot;                 
+## [18] &quot;PharmacoDB.id&quot;                            
+## [19] &quot;unique.tissueid.fromstudies&quot;              
+## [20] &quot;CellLine.Type&quot;                            
 ## [21] &quot;Metastatic&quot;</code></pre>
 <p><strong>New Sample Info</strong></p>
 <pre><code>## --------------------------------------------------------------------------------
@@ -1867,18 +1939,41 @@ border-radius: 0px;
 ## Num Samples in New: 1000
 
 ## [1] &quot;Sample Info Columns&quot;
-##  [1] &quot;cellosaurus.accession&quot;                        &quot;cellosaurus.cellLineName&quot;                     &quot;cellosaurus.category&quot;                        
-##  [4] &quot;cellosaurus.date&quot;                             &quot;cellosaurus.ageAtSampling&quot;                    &quot;cellosaurus.sexOfCell&quot;                       
-##  [7] &quot;cellosaurus.synonyms&quot;                         &quot;cellosaurus.diseases&quot;                         &quot;GDSC.sampleid&quot;                               
-## [10] &quot;GDSC.Sample_Name&quot;                             &quot;CCLE.sampleid&quot;                                &quot;GDSC.BROAD_ID&quot;                               
-## [13] &quot;GDSC.RRID&quot;                                    &quot;CMP.model_id&quot;                                 &quot;CMP.sampleid&quot;                                
-## [16] &quot;GDSC.COSMIC_ID&quot;                               &quot;GDSC.Whole_Exome_Sequencing_.WES.&quot;            &quot;GDSC.Copy_Number_Alterations_.CNA.&quot;          
-## [19] &quot;GDSC.Gene_Expression&quot;                         &quot;GDSC.Methylation&quot;                             &quot;GDSC.DrugResponse&quot;                           
-## [22] &quot;GDSC.Tissue_descriptor_1&quot;                     &quot;GDSC.Tissuedescriptor_2&quot;                      &quot;GDSC.Cancer_Type.matching_TCGA_label.&quot;       
-## [25] &quot;GDSC.Microsatellite_instability_Status_.MSI.&quot; &quot;GDSC.Screen_Medium&quot;                           &quot;GDSC.Growth_Properties&quot;                      
-## [28] &quot;GDSC.tissue&quot;                                  &quot;GDSC.cancer_type&quot;                             &quot;GDSC.cancer_type_ncit_id&quot;                    
-## [31] &quot;GDSC.sample_site&quot;                             &quot;GDSC.gender&quot;                                  &quot;GDSC.ethnicity&quot;                              
-## [34] &quot;GDSC.age_at_sampling&quot;                         &quot;sampleid&quot;</code></pre>
+##  [1] &quot;cellosaurus.accession&quot;                       
+##  [2] &quot;cellosaurus.cellLineName&quot;                    
+##  [3] &quot;cellosaurus.category&quot;                        
+##  [4] &quot;cellosaurus.date&quot;                            
+##  [5] &quot;cellosaurus.ageAtSampling&quot;                   
+##  [6] &quot;cellosaurus.sexOfCell&quot;                       
+##  [7] &quot;cellosaurus.synonyms&quot;                        
+##  [8] &quot;cellosaurus.diseases&quot;                        
+##  [9] &quot;GDSC.sampleid&quot;                               
+## [10] &quot;GDSC.Sample_Name&quot;                            
+## [11] &quot;CCLE.sampleid&quot;                               
+## [12] &quot;GDSC.BROAD_ID&quot;                               
+## [13] &quot;GDSC.RRID&quot;                                   
+## [14] &quot;CMP.model_id&quot;                                
+## [15] &quot;CMP.sampleid&quot;                                
+## [16] &quot;GDSC.COSMIC_ID&quot;                              
+## [17] &quot;GDSC.Whole_Exome_Sequencing_.WES.&quot;           
+## [18] &quot;GDSC.Copy_Number_Alterations_.CNA.&quot;          
+## [19] &quot;GDSC.Gene_Expression&quot;                        
+## [20] &quot;GDSC.Methylation&quot;                            
+## [21] &quot;GDSC.DrugResponse&quot;                           
+## [22] &quot;GDSC.Tissue_descriptor_1&quot;                    
+## [23] &quot;GDSC.Tissuedescriptor_2&quot;                     
+## [24] &quot;GDSC.Cancer_Type.matching_TCGA_label.&quot;       
+## [25] &quot;GDSC.Microsatellite_instability_Status_.MSI.&quot;
+## [26] &quot;GDSC.Screen_Medium&quot;                          
+## [27] &quot;GDSC.Growth_Properties&quot;                      
+## [28] &quot;GDSC.tissue&quot;                                 
+## [29] &quot;GDSC.cancer_type&quot;                            
+## [30] &quot;GDSC.cancer_type_ncit_id&quot;                    
+## [31] &quot;GDSC.sample_site&quot;                            
+## [32] &quot;GDSC.gender&quot;                                 
+## [33] &quot;GDSC.ethnicity&quot;                              
+## [34] &quot;GDSC.age_at_sampling&quot;                        
+## [35] &quot;sampleid&quot;</code></pre>
 </div>
 <div id="treatmentinfo-1" class="section level3">
 <h3>TreatmentInfo</h3>
@@ -1890,8 +1985,9 @@ border-radius: 0px;
 ## Num Samples in Old Treatment Info: 190
 
 ## [1] &quot;Treatment Info Columns&quot;
-##  [1] &quot;DRUG_ID&quot;        &quot;SCREENING_SITE&quot; &quot;DRUG_NAME&quot;      &quot;SYNONYMS&quot;       &quot;TARGET&quot;         &quot;TARGET_PATHWAY&quot; &quot;treatmentid&quot;    &quot;smiles&quot;         &quot;inchikey&quot;       &quot;cid&quot;           
-## [11] &quot;FDA&quot;</code></pre>
+##  [1] &quot;DRUG_ID&quot;        &quot;SCREENING_SITE&quot; &quot;DRUG_NAME&quot;      &quot;SYNONYMS&quot;      
+##  [5] &quot;TARGET&quot;         &quot;TARGET_PATHWAY&quot; &quot;treatmentid&quot;    &quot;smiles&quot;        
+##  [9] &quot;inchikey&quot;       &quot;cid&quot;            &quot;FDA&quot;</code></pre>
 <p><strong>New Treatment Info</strong></p>
 <pre><code>## --------------------------------------------------------------------------------
 ## New Treatment Info
@@ -1900,10 +1996,16 @@ border-radius: 0px;
 ## Num Samples in New Treatment Info: 538
 
 ## [1] &quot;Treatment Info Columns&quot;
-##  [1] &quot;pubchem.CID&quot;                     &quot;GDSC.treatmentid&quot;                &quot;GDSC.DRUG_ID&quot;                    &quot;GDSC.SCREENING_SITE&quot;             &quot;GDSC.DRUG_NAME&quot;                 
-##  [6] &quot;GDSC.SYNONYMS&quot;                   &quot;GDSC.TARGET&quot;                     &quot;GDSC.TARGET_PATHWAY&quot;             &quot;pubchem.MolecularFormula&quot;        &quot;pubchem.CanonicalSMILES&quot;        
-## [11] &quot;pubchem.InChIKey&quot;                &quot;pubchem.Title&quot;                   &quot;treatmentid&quot;                     &quot;unichem.ChEMBL&quot;                  &quot;unichem.ChEBI&quot;                  
-## [16] &quot;unichem.DrugBank&quot;                &quot;unichem.LINCS&quot;                   &quot;unichem.FDA_SRS&quot;                 &quot;unichem.clinicaltrials&quot;          &quot;unichem.PharmGKB&quot;               
+##  [1] &quot;pubchem.CID&quot;                     &quot;GDSC.treatmentid&quot;               
+##  [3] &quot;GDSC.DRUG_ID&quot;                    &quot;GDSC.SCREENING_SITE&quot;            
+##  [5] &quot;GDSC.DRUG_NAME&quot;                  &quot;GDSC.SYNONYMS&quot;                  
+##  [7] &quot;GDSC.TARGET&quot;                     &quot;GDSC.TARGET_PATHWAY&quot;            
+##  [9] &quot;pubchem.MolecularFormula&quot;        &quot;pubchem.CanonicalSMILES&quot;        
+## [11] &quot;pubchem.InChIKey&quot;                &quot;pubchem.Title&quot;                  
+## [13] &quot;treatmentid&quot;                     &quot;unichem.ChEMBL&quot;                 
+## [15] &quot;unichem.ChEBI&quot;                   &quot;unichem.DrugBank&quot;               
+## [17] &quot;unichem.LINCS&quot;                   &quot;unichem.FDA_SRS&quot;                
+## [19] &quot;unichem.clinicaltrials&quot;          &quot;unichem.PharmGKB&quot;               
 ## [21] &quot;unichem.rxnorm&quot;                  &quot;unichem.NIH_Clinical_Collection&quot;</code></pre>
 </div>
 <div id="molecularprofiles-1" class="section level3">
@@ -2103,13 +2205,34 @@ border-radius: 0px;
 ## [1] &quot;Number of samples: 809&quot;
 ## [1] &quot;Total number of experiments: 215780&quot;
 ## [1] &quot;Profiles DataFrame: &quot;
-##                                                           aac_recomputed ic50_recomputed       HS    E_inf        EC50
-## PC-14_Camptothecin_1003_3230_SeedDens_250_assay_Glo_dur_4    0.115669207       0.1521703 1.520145 47.03493  0.02372539
-## PC-14_PD-0325901_1060_3230_SeedDens_250_assay_Glo_dur_4      0.055431877              NA 4.000000 84.90308  0.01979284
-## PC-14_Entinostat_1593_3230_SeedDens_250_assay_Glo_dur_4      0.169286153              NA 4.000000 54.47200  0.76665986
-## PC-14_VE-822_1613_3230_SeedDens_250_assay_Glo_dur_4          0.033331791       4.5093150 4.000000  0.00000  4.50931499
-## PC-14_WZ4003_1614_3230_SeedDens_250_assay_Glo_dur_4          0.055152910              NA 4.000000 59.48966  3.92779893
-## PC-14_CZC24832_1615_3230_SeedDens_250_assay_Glo_dur_4        0.009643103              NA 4.000000 61.56250 10.00000000
+##                                                           aac_recomputed
+## PC-14_Camptothecin_1003_3230_SeedDens_250_assay_Glo_dur_4    0.115669207
+## PC-14_PD-0325901_1060_3230_SeedDens_250_assay_Glo_dur_4      0.055431877
+## PC-14_Entinostat_1593_3230_SeedDens_250_assay_Glo_dur_4      0.169286153
+## PC-14_VE-822_1613_3230_SeedDens_250_assay_Glo_dur_4          0.033331791
+## PC-14_WZ4003_1614_3230_SeedDens_250_assay_Glo_dur_4          0.055152910
+## PC-14_CZC24832_1615_3230_SeedDens_250_assay_Glo_dur_4        0.009643103
+##                                                           ic50_recomputed
+## PC-14_Camptothecin_1003_3230_SeedDens_250_assay_Glo_dur_4       0.1521703
+## PC-14_PD-0325901_1060_3230_SeedDens_250_assay_Glo_dur_4                NA
+## PC-14_Entinostat_1593_3230_SeedDens_250_assay_Glo_dur_4                NA
+## PC-14_VE-822_1613_3230_SeedDens_250_assay_Glo_dur_4             4.5093150
+## PC-14_WZ4003_1614_3230_SeedDens_250_assay_Glo_dur_4                    NA
+## PC-14_CZC24832_1615_3230_SeedDens_250_assay_Glo_dur_4                  NA
+##                                                                 HS    E_inf
+## PC-14_Camptothecin_1003_3230_SeedDens_250_assay_Glo_dur_4 1.520145 47.03493
+## PC-14_PD-0325901_1060_3230_SeedDens_250_assay_Glo_dur_4   4.000000 84.90308
+## PC-14_Entinostat_1593_3230_SeedDens_250_assay_Glo_dur_4   4.000000 54.47200
+## PC-14_VE-822_1613_3230_SeedDens_250_assay_Glo_dur_4       4.000000  0.00000
+## PC-14_WZ4003_1614_3230_SeedDens_250_assay_Glo_dur_4       4.000000 59.48966
+## PC-14_CZC24832_1615_3230_SeedDens_250_assay_Glo_dur_4     4.000000 61.56250
+##                                                                  EC50
+## PC-14_Camptothecin_1003_3230_SeedDens_250_assay_Glo_dur_4  0.02372539
+## PC-14_PD-0325901_1060_3230_SeedDens_250_assay_Glo_dur_4    0.01979284
+## PC-14_Entinostat_1593_3230_SeedDens_250_assay_Glo_dur_4    0.76665986
+## PC-14_VE-822_1613_3230_SeedDens_250_assay_Glo_dur_4        4.50931499
+## PC-14_WZ4003_1614_3230_SeedDens_250_assay_Glo_dur_4        3.92779893
+## PC-14_CZC24832_1615_3230_SeedDens_250_assay_Glo_dur_4     10.00000000
 
 ## --------------------------------------------------------------------------------
 ## New Treatment Response
@@ -2122,14 +2245,22 @@ border-radius: 0px;
 ## [1] &quot;Total number of experiments: 51681&quot;
 ## [1] &quot;Profiles/Summary Assay: &quot;
 ## Key: &lt;treatmentid, sampleid&gt;
-##    treatmentid sampleid        HS      E_inf        EC50       Rsq aac_recomputed ic50_recomputed
-##         &lt;char&gt;   &lt;char&gt;     &lt;num&gt;      &lt;num&gt;       &lt;num&gt;     &lt;num&gt;          &lt;num&gt;           &lt;num&gt;
-## 1:    AFATINIB      697 1.0000000 0.02838418  2.00000000 0.8840460      21.020562       2.0011360
-## 2:    AFATINIB   A4-FUK 1.0000000 0.04875089  2.00000000 0.7984359      21.016280       2.0019519
-## 3:    AFATINIB     A431 0.2541719 0.00000000  0.39857465 0.5502951      43.183496       0.3985746
-## 4:    AFATINIB   ASPC-1 1.0000000 0.61025814 10.00000000 0.1734226       8.086713      10.1235597
-## 5:    AFATINIB   BALL-1 1.0000000 0.04231953  3.16255534 0.8904389      16.729081       3.1652344
-## 6:    AFATINIB BB30-HNC 1.0566193 0.35698201  0.01839543 0.8695942      75.201470       0.0185206</code></pre>
+##    treatmentid sampleid        HS      E_inf        EC50       Rsq
+##         &lt;char&gt;   &lt;char&gt;     &lt;num&gt;      &lt;num&gt;       &lt;num&gt;     &lt;num&gt;
+## 1:    AFATINIB      697 1.0000000 0.02838418  2.00000000 0.8840460
+## 2:    AFATINIB   A4-FUK 1.0000000 0.04875089  2.00000000 0.7984359
+## 3:    AFATINIB     A431 0.2541719 0.00000000  0.39857465 0.5502951
+## 4:    AFATINIB   ASPC-1 1.0000000 0.61025814 10.00000000 0.1734226
+## 5:    AFATINIB   BALL-1 1.0000000 0.04231953  3.16255534 0.8904389
+## 6:    AFATINIB BB30-HNC 1.0566193 0.35698201  0.01839543 0.8695942
+##    aac_recomputed ic50_recomputed
+##             &lt;num&gt;           &lt;num&gt;
+## 1:      21.020562       2.0011360
+## 2:      21.016280       2.0019519
+## 3:      43.183496       0.3985746
+## 4:       8.086713      10.1235597
+## 5:      16.729081       3.1652344
+## 6:      75.201470       0.0185206</code></pre>
 </div>
 </div>
 <div id="gcsi-logs" class="section level2">
@@ -2196,14 +2327,25 @@ border-radius: 0px;
 ## Num Samples in Old: 788
 
 ## [1] &quot;Sample Info Columns&quot;
-##  [1] &quot;EMT&quot;                         &quot;DoublingTime&quot;                &quot;SeedingDensity&quot;              &quot;isBlood&quot;                     &quot;isBone&quot;                     
-##  [6] &quot;isBone.Marrow&quot;               &quot;isBrain&quot;                     &quot;isBreast&quot;                    &quot;isCervix&quot;                    &quot;isColon&quot;                    
-## [11] &quot;isConnective.Tissue&quot;         &quot;isEsophagus&quot;                 &quot;isHead.and.Neck&quot;             &quot;isKidney&quot;                    &quot;isLiver&quot;                    
-## [16] &quot;isLung&quot;                      &quot;isLymphoid&quot;                  &quot;isMuscle&quot;                    &quot;isOvary&quot;                     &quot;isPancreas&quot;                 
-## [21] &quot;isProstate&quot;                  &quot;isSkin&quot;                      &quot;isSmall.Intestine&quot;           &quot;isStomach&quot;                   &quot;isUnclassified&quot;             
-## [26] &quot;isUninary&quot;                   &quot;isUterus&quot;                    &quot;DNADamageMutation&quot;           &quot;PI3K&quot;                        &quot;MAPK&quot;                       
-## [31] &quot;tissueid&quot;                    &quot;sampleid&quot;                    &quot;Cellosaurus.Disease.Type&quot;    &quot;Cellosaurus.Accession.id&quot;    &quot;PharmacoDB.id&quot;              
-## [36] &quot;unique.tissueid.fromstudies&quot; &quot;CellLine.Type&quot;               &quot;Metastatic&quot;</code></pre>
+##  [1] &quot;EMT&quot;                         &quot;DoublingTime&quot;               
+##  [3] &quot;SeedingDensity&quot;              &quot;isBlood&quot;                    
+##  [5] &quot;isBone&quot;                      &quot;isBone.Marrow&quot;              
+##  [7] &quot;isBrain&quot;                     &quot;isBreast&quot;                   
+##  [9] &quot;isCervix&quot;                    &quot;isColon&quot;                    
+## [11] &quot;isConnective.Tissue&quot;         &quot;isEsophagus&quot;                
+## [13] &quot;isHead.and.Neck&quot;             &quot;isKidney&quot;                   
+## [15] &quot;isLiver&quot;                     &quot;isLung&quot;                     
+## [17] &quot;isLymphoid&quot;                  &quot;isMuscle&quot;                   
+## [19] &quot;isOvary&quot;                     &quot;isPancreas&quot;                 
+## [21] &quot;isProstate&quot;                  &quot;isSkin&quot;                     
+## [23] &quot;isSmall.Intestine&quot;           &quot;isStomach&quot;                  
+## [25] &quot;isUnclassified&quot;              &quot;isUninary&quot;                  
+## [27] &quot;isUterus&quot;                    &quot;DNADamageMutation&quot;          
+## [29] &quot;PI3K&quot;                        &quot;MAPK&quot;                       
+## [31] &quot;tissueid&quot;                    &quot;sampleid&quot;                   
+## [33] &quot;Cellosaurus.Disease.Type&quot;    &quot;Cellosaurus.Accession.id&quot;   
+## [35] &quot;PharmacoDB.id&quot;               &quot;unique.tissueid.fromstudies&quot;
+## [37] &quot;CellLine.Type&quot;               &quot;Metastatic&quot;</code></pre>
 <p><strong>New Sample Info</strong></p>
 <pre><code>## --------------------------------------------------------------------------------
 ## New Sample Info
@@ -2212,10 +2354,18 @@ border-radius: 0px;
 ## Num Samples in New: 795
 
 ## [1] &quot;Sample Info Columns&quot;
-##  [1] &quot;gCSI.CellLineName&quot;         &quot;gCSI.PrimaryTissue&quot;        &quot;gCSI.Norm_CellLineName&quot;    &quot;EGA.ENA_ALIAS&quot;             &quot;EGA.TissueSupergroup&quot;      &quot;EGA.MetastaticTissue&quot;     
-##  [7] &quot;EGA.Disease&quot;               &quot;EGA.Media&quot;                 &quot;EGA.FreezeMedia&quot;           &quot;EGA.Age&quot;                   &quot;EGA.Sex&quot;                   &quot;EGA.Ethnicity&quot;            
-## [13] &quot;EGA.Protocol_REF&quot;          &quot;EGA.AssayName&quot;             &quot;EGA.ScanName&quot;              &quot;cellosaurus.cellLineName&quot;  &quot;cellosaurus.accession&quot;     &quot;cellosaurus.category&quot;     
-## [19] &quot;cellosaurus.date&quot;          &quot;cellosaurus.ageAtSampling&quot; &quot;cellosaurus.sexOfCell&quot;     &quot;cellosaurus.synonyms&quot;      &quot;cellosaurus.diseases&quot;      &quot;gCSI.sampleid&quot;            
+##  [1] &quot;gCSI.CellLineName&quot;         &quot;gCSI.PrimaryTissue&quot;       
+##  [3] &quot;gCSI.Norm_CellLineName&quot;    &quot;EGA.ENA_ALIAS&quot;            
+##  [5] &quot;EGA.TissueSupergroup&quot;      &quot;EGA.MetastaticTissue&quot;     
+##  [7] &quot;EGA.Disease&quot;               &quot;EGA.Media&quot;                
+##  [9] &quot;EGA.FreezeMedia&quot;           &quot;EGA.Age&quot;                  
+## [11] &quot;EGA.Sex&quot;                   &quot;EGA.Ethnicity&quot;            
+## [13] &quot;EGA.Protocol_REF&quot;          &quot;EGA.AssayName&quot;            
+## [15] &quot;EGA.ScanName&quot;              &quot;cellosaurus.cellLineName&quot; 
+## [17] &quot;cellosaurus.accession&quot;     &quot;cellosaurus.category&quot;     
+## [19] &quot;cellosaurus.date&quot;          &quot;cellosaurus.ageAtSampling&quot;
+## [21] &quot;cellosaurus.sexOfCell&quot;     &quot;cellosaurus.synonyms&quot;     
+## [23] &quot;cellosaurus.diseases&quot;      &quot;gCSI.sampleid&quot;            
 ## [25] &quot;sampleid&quot;</code></pre>
 </div>
 <div id="treatmentinfo-2" class="section level3">
@@ -2237,11 +2387,18 @@ border-radius: 0px;
 ## Num Samples in New Treatment Info: 42
 
 ## [1] &quot;Treatment Info Columns&quot;
-##  [1] &quot;unichem.ChEMBL&quot;                   &quot;pubchem.CID&quot;                      &quot;gCSI.norm_treatmentid&quot;            &quot;gCSI.treatmentid&quot;                 &quot;pubchem.MolecularFormula&quot;        
-##  [6] &quot;pubchem.MolecularWeight&quot;          &quot;pubchem.InChIKey&quot;                 &quot;pubchem.Title&quot;                    &quot;unichem.ChEBI&quot;                    &quot;unichem.clinicaltrials&quot;          
-## [11] &quot;unichem.DrugBank&quot;                 &quot;unichem.FDA_SRS&quot;                  &quot;unichem.LINCS&quot;                    &quot;unichem.NIH_Clinical_Collection&quot;  &quot;unichem.PharmGKB&quot;                
-## [16] &quot;unichem.rxnorm&quot;                   &quot;chembl.parent_molecule_chembl_id&quot; &quot;chembl.target_chembl_id&quot;          &quot;chembl.record_id&quot;                 &quot;chembl.mechanism_of_action&quot;      
-## [21] &quot;chembl.mechanism_comment&quot;         &quot;chembl.action_type&quot;               &quot;treatmentid&quot;</code></pre>
+##  [1] &quot;unichem.ChEMBL&quot;                   &quot;pubchem.CID&quot;                     
+##  [3] &quot;gCSI.norm_treatmentid&quot;            &quot;gCSI.treatmentid&quot;                
+##  [5] &quot;pubchem.MolecularFormula&quot;         &quot;pubchem.MolecularWeight&quot;         
+##  [7] &quot;pubchem.InChIKey&quot;                 &quot;pubchem.Title&quot;                   
+##  [9] &quot;unichem.ChEBI&quot;                    &quot;unichem.clinicaltrials&quot;          
+## [11] &quot;unichem.DrugBank&quot;                 &quot;unichem.FDA_SRS&quot;                 
+## [13] &quot;unichem.LINCS&quot;                    &quot;unichem.NIH_Clinical_Collection&quot; 
+## [15] &quot;unichem.PharmGKB&quot;                 &quot;unichem.rxnorm&quot;                  
+## [17] &quot;chembl.parent_molecule_chembl_id&quot; &quot;chembl.target_chembl_id&quot;         
+## [19] &quot;chembl.record_id&quot;                 &quot;chembl.mechanism_of_action&quot;      
+## [21] &quot;chembl.mechanism_comment&quot;         &quot;chembl.action_type&quot;              
+## [23] &quot;treatmentid&quot;</code></pre>
 </div>
 <div id="molecularprofiles-2" class="section level3">
 <h3>MolecularProfiles</h3>
@@ -2376,20 +2533,34 @@ border-radius: 0px;
 ## [1] &quot;Number of samples: 569&quot;
 ## [1] &quot;Total number of experiments: 16688&quot;
 ## [1] &quot;Profiles DataFrame: &quot;
-##                    aac_recomputed ic50_recomputed       HS     E_inf       EC50 GR_AOC_published meanviability_published GRmax_published Emax_published GRinf_published
-## 22Rv1_17-AAG_6a        0.23181647        1.081040 1.386410 28.179810  0.5944260       0.29333333               0.7545167           0.130     0.30894488      0.08861534
-## 22Rv1_5-FU_8g          0.25059450              NA 1.723254 56.201823  1.3085159       0.27966667               0.7448983           0.495     0.54816000      0.51229424
-## 22Rv1_AZ-628_8g        0.15030690        3.039147 2.267915 47.522132  0.8079433       0.16633333               0.8559627           0.342     0.43983110      0.38020802
-## 22Rv1_Cisplatin_6a     0.01067784              NA 4.000000 88.631298 44.2150896      -0.01744444               1.0191022           0.890     0.89060009      1.01744444
-## 22Rv1_Cisplatin_8g     0.28197159        3.941812 1.519334  6.011569  3.6230991       0.42833333               0.6913101          -0.606     0.03543224     -0.92702240
-## 22Rv1_GDC-0941_6a      0.24497744        1.097340 1.560266 47.327876  0.1678894       0.23375000               0.7918895           0.361     0.45316145      0.38887158
-##                    GEC50_published GR50_published
-## 22Rv1_17-AAG_6a       7.315019e-07   8.402577e-07
-## 22Rv1_5-FU_8g         1.419045e-06            Inf
-## 22Rv1_AZ-628_8g       9.074455e-07   1.871457e-06
-## 22Rv1_Cisplatin_6a    0.000000e+00            Inf
-## 22Rv1_Cisplatin_8g    1.069242e-05   3.583645e-06
-## 22Rv1_GDC-0941_6a     1.896307e-07   5.073825e-07
+##                    aac_recomputed ic50_recomputed       HS     E_inf       EC50
+## 22Rv1_17-AAG_6a        0.23181647        1.081040 1.386410 28.179810  0.5944260
+## 22Rv1_5-FU_8g          0.25059450              NA 1.723254 56.201823  1.3085159
+## 22Rv1_AZ-628_8g        0.15030690        3.039147 2.267915 47.522132  0.8079433
+## 22Rv1_Cisplatin_6a     0.01067784              NA 4.000000 88.631298 44.2150896
+## 22Rv1_Cisplatin_8g     0.28197159        3.941812 1.519334  6.011569  3.6230991
+## 22Rv1_GDC-0941_6a      0.24497744        1.097340 1.560266 47.327876  0.1678894
+##                    GR_AOC_published meanviability_published GRmax_published
+## 22Rv1_17-AAG_6a          0.29333333               0.7545167           0.130
+## 22Rv1_5-FU_8g            0.27966667               0.7448983           0.495
+## 22Rv1_AZ-628_8g          0.16633333               0.8559627           0.342
+## 22Rv1_Cisplatin_6a      -0.01744444               1.0191022           0.890
+## 22Rv1_Cisplatin_8g       0.42833333               0.6913101          -0.606
+## 22Rv1_GDC-0941_6a        0.23375000               0.7918895           0.361
+##                    Emax_published GRinf_published GEC50_published
+## 22Rv1_17-AAG_6a        0.30894488      0.08861534    7.315019e-07
+## 22Rv1_5-FU_8g          0.54816000      0.51229424    1.419045e-06
+## 22Rv1_AZ-628_8g        0.43983110      0.38020802    9.074455e-07
+## 22Rv1_Cisplatin_6a     0.89060009      1.01744444    0.000000e+00
+## 22Rv1_Cisplatin_8g     0.03543224     -0.92702240    1.069242e-05
+## 22Rv1_GDC-0941_6a      0.45316145      0.38887158    1.896307e-07
+##                    GR50_published
+## 22Rv1_17-AAG_6a      8.402577e-07
+## 22Rv1_5-FU_8g                 Inf
+## 22Rv1_AZ-628_8g      1.871457e-06
+## 22Rv1_Cisplatin_6a            Inf
+## 22Rv1_Cisplatin_8g   3.583645e-06
+## 22Rv1_GDC-0941_6a    5.073825e-07
 
 ## --------------------------------------------------------------------------------
 ## New Treatment Response
@@ -2402,14 +2573,22 @@ border-radius: 0px;
 ## [1] &quot;Total number of experiments: 141756&quot;
 ## [1] &quot;Profiles/Summary Assay: &quot;
 ## Key: &lt;treatmentid, gCSI.treatmentid, ExperimentNumber, dose, sampleid, gCSI.sampleid&gt;
-##    treatmentid gCSI.treatmentid ExperimentNumber        dose sampleid gCSI.sampleid    GR activities.mean activities.std
-##         &lt;char&gt;           &lt;char&gt;           &lt;char&gt;       &lt;num&gt;   &lt;char&gt;        &lt;char&gt; &lt;num&gt;           &lt;num&gt;          &lt;num&gt;
-## 1:      17-AAG            17AAG               6a 0.001524158    22Rv1         22RV1 1.003       0.3104185      4.4933546
-## 2:      17-AAG            17AAG               6a 0.001524158    A-375          A375 1.015       2.1585380      0.2984795
-## 3:      17-AAG            17AAG               6a 0.001524158    A-427          A427 1.036       4.3378962      7.0766344
-## 4:      17-AAG            17AAG               6a 0.001524158    A2780         A2780 1.062      11.6888332     11.8974871
-## 5:      17-AAG            17AAG               6a 0.001524158     A549          A549 1.006       0.6713567      5.0588595
-## 6:      17-AAG            17AAG               6a 0.001524158      AGS           AGS 1.025       3.7235839      2.3278981</code></pre>
+##    treatmentid gCSI.treatmentid ExperimentNumber        dose sampleid
+##         &lt;char&gt;           &lt;char&gt;           &lt;char&gt;       &lt;num&gt;   &lt;char&gt;
+## 1:      17-AAG            17AAG               6a 0.001524158    22Rv1
+## 2:      17-AAG            17AAG               6a 0.001524158    A-375
+## 3:      17-AAG            17AAG               6a 0.001524158    A-427
+## 4:      17-AAG            17AAG               6a 0.001524158    A2780
+## 5:      17-AAG            17AAG               6a 0.001524158     A549
+## 6:      17-AAG            17AAG               6a 0.001524158      AGS
+##    gCSI.sampleid    GR activities.mean activities.std
+##           &lt;char&gt; &lt;num&gt;           &lt;num&gt;          &lt;num&gt;
+## 1:         22RV1 1.003       0.3104185      4.4933546
+## 2:          A375 1.015       2.1585380      0.2984795
+## 3:          A427 1.036       4.3378962      7.0766344
+## 4:         A2780 1.062      11.6888332     11.8974871
+## 5:          A549 1.006       0.6713567      5.0588595
+## 6:           AGS 1.025       3.7235839      2.3278981</code></pre>
 </div>
 </div>
 

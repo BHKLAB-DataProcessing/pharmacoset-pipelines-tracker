@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Add a short description here"
 authors = ["Jermiah <jermiahjoseph98@gmail.com>"]
 channels = ["conda-forge", "bioconda"]
-platforms = ["linux-64"]
+platforms = ["linux-64", "osx-64"]
 
 [tasks]
 
@@ -23,7 +23,7 @@ cmd = "Rscript scripts/setup.R"
 description = "Install R packages and setup the environment"
 
 [tasks.build]
-cmd = "Rscript -e 'rmarkdown::render(`PSet-Update_Logs.rmd`, output_file = `index.html`)'"
+cmd = "Rscript scripts/build.R"
 description = "Build the project"
 
 [system-requirements]
