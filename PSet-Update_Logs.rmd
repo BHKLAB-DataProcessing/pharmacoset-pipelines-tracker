@@ -1,0 +1,502 @@
+---
+title: "PSet Differences"
+output:
+  html_document:
+    toc: yes
+    toc_float:
+      collapsed: true
+  pdf_document: default
+  md_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+hook2 <- function(x){ gsub("```\n+```\n", "\n", x) }
+knitr::knit_hooks$set(document = hook2)
+
+NUM_CORES <- 24
+
+
+if(!requireNamespace("PharmacoGx", quietly = TRUE)){
+  pak::pkg_install("PharmacoGx")
+}
+
+# make data directory
+dir.create("./data", showWarnings = FALSE)
+```
+
+## Download and Load Data
+
+```{r listold, echo=FALSE}
+
+available <- PharmacoGx::availablePSets()
+print("Available PharmacoSets")
+print(available[, c("PSet Name")])
+pset_list <- list(
+  GDSC = "GDSC_2020(v2-8.2)",
+  CCLE = "CCLE_2015",
+  gCSI = "gCSI_2019"
+)
+
+```
+
+```{r download_old, echo=FALSE}
+results <- sapply(names(pset_list), function(pset){
+  if(!file.exists(paste0("./data/old_", pset, "_PSet.RDS"))){
+    pset <- PharmacoGx::downloadPSet(
+      name=pset_list[[pset]],
+      saveDir="./data",
+      pSetFileName=paste0(pset, "_PSet.RDS"),
+      verbose=TRUE,
+      timeout=3600
+    )
+  }
+})
+
+```
+
+```{r load_old, echo=FALSE}
+for(pset in names(pset_list)){
+  # read in the pset into the environment
+  message(paste0("Reading in old", pset))
+  base_path <- paste0("./data/old_", pset)
+  qs_path <- paste0(base_path, "_PSet.qs")
+  if(file.exists(qs_path)){
+    assign(pset, qs::qread(qs_path, nthreads=NUM_CORES))
+  }
+  else{
+    assign(pset, readRDS(paste0(base_path, "_PSet.RDS")))
+    message(paste0("Saving ", pset, " as a qs object"))
+    qs::qsave(get(pset), paste0(base_path, "_PSet.qs"))
+  }
+}
+
+```
+
+```{r download_new, echo=FALSE}
+if(!file.exists("./data/CCLE_PSet.RDS")){
+  bash_command <- "gsutil cp gs://orcestradata/CCLE-Pharmacoset_Snakemake/results/CCLE_PSet.RDS ./data/CCLE_PSet.RDS"
+  system(bash_command)
+}
+
+if(!file.exists("./data/gCSI_PSet.RDS")){
+  bash_command <- "gsutil cp gs://orcestradata/gCSI-Pharmacoset_Snakemake/results/data/gCSI_PharmacoSet.RDS ./data/gCSI_PSet.RDS"
+  system(bash_command)
+}
+
+if(!file.exists("./data/GDSC_PSet.RDS")){
+  bash_command <- "gsutil cp gs://orcestradata/GDSC-Pharmacoset_Snakemake/results/data/GDSC2_8.4/GDSC2_8.4_PharmacoSet.RDS ./data/GDSC_PSet.RDS"
+  system(bash_command)
+}
+```
+
+```{r load_new, echo=FALSE, results='hide'}
+
+for(pset in names(pset_list)){
+
+  # read in the pset into the environment
+  message(paste0("Reading in new ", pset))
+  base_path <- paste0("./data/", pset)
+  qs_path <- paste0(base_path, "_PSet.qs")
+  if(file.exists(qs_path)){
+    assign(paste0("new_", pset), qs::qread(qs_path, nthreads=NUM_CORES))
+  }
+  else{
+    assign(paste0("new_", pset), readRDS(paste0(base_path, "_PSet.RDS")))
+    message(paste0("Saving ", pset, " as a qs object"))
+    qs::qsave(get(paste0("new_", pset)), paste0(base_path, "_PSet.qs"))
+  }
+}
+```
+
+```{r, echo=FALSE}
+# HELPER FUNCTIONS
+
+print_header <- function(..., length_of_line){
+  string <- paste(..., collapse = " ")
+  length_of_line <- ifelse(missing(length_of_line), nchar(string), length_of_line)
+  line_ <- paste0(rep("-", length_of_line), collapse = "")
+  message(paste0(line_, "\n", string, "\n", line_))
+}
+
+print_sample_info <- function(data, old_or_new){
+  sampleinfo <- PharmacoGx::sampleInfo(data)
+  print_header(old_or_new, "Sample Info", length_of_line = 80)
+
+  message(paste0("Num Samples in ", old_or_new, ": ", nrow(sampleinfo)))
+  print("Sample Info Columns")
+  names(sampleinfo) |> show()
+  
+}
+
+
+print_treatment_info <- function(data, old_or_new){
+  treatmentinfo <- PharmacoGx::treatmentInfo(data)
+  print_header(old_or_new, "Treatment Info", length_of_line = 80)
+
+  message(paste0("Num Samples in ", old_or_new, " Treatment Info", ": ", nrow(treatmentinfo)))
+  print("Treatment Info Columns")
+  names(treatmentinfo) |> show()
+}
+
+```
+
+## CCLE Logs
+
+### NEW CCLE PSet
+```{r quick_view_CCLE_new, echo=FALSE}
+show(new_CCLE)
+```
+
+### OLD CCLE PSet
+
+```{r quick_view_CCLE_old, echo=FALSE}
+CCLE <- PharmacoGx::updateObject(CCLE)
+show(CCLE)
+```
+
+### SampleInfo
+
+**Old Sample Info**
+```{r sampleinfo_old, echo=FALSE}
+print_treatment_info(CCLE, "Old")
+```
+
+**New Sample Info**
+```{r sampleinfo_new, echo=FALSE}
+print_treatment_info(new_CCLE, "New")
+```
+
+### TreatmentInfo
+
+**Old Treatment Info**
+```{r treatmentinfo_old, echo=FALSE}
+print_treatment_info(CCLE, "Old")
+```
+
+
+**New Treatment Info**
+```{r treatmentinfo_new, echo=FALSE}
+print_treatment_info(new_CCLE, "New")
+```
+
+
+
+```{r molecular, echo=FALSE}
+mol_summary <- function(mol){
+  if(is.list(mol)){
+    print(names(mol))
+  }
+  else if(class(mol) == "MultiAssayExperiment"){
+     print(names(mol))
+  }
+}
+
+get_mol_by_annotation <- function(mol, annotation){
+  se_list <- sapply(names(mol), function(name){
+    se <- mol[[name]]
+    if(se@metadata$annotation %in% annotation){
+      return(se)
+    }
+    else{
+      return(NULL)
+    }
+  }, simplify = TRUE)
+  # remove nulls
+  return(se_list[!sapply(se_list, is.null)])
+}
+
+
+
+display_se_info <- function(se){
+
+  print(paste0("Assay Names: ", paste0(SummarizedExperiment::assayNames(se), collapse = ", ")))
+  print(paste0("Num Samples: ", nrow(se)))
+  print(paste0("Num Features: ", ncol(se)))
+  if("data_source" %in% names(se@metadata)){
+    print(paste0("Source Description: ", se@metadata[["data_source"]][["description"]]))
+  }else{
+    print("No Description")
+  }
+
+}
+
+display_molecular_by_annotation <- function(old, new, annotation){
+  old_ses <- get_mol_by_annotation(old, annotation)
+  new_ses <- get_mol_by_annotation(new, annotation)
+
+  print_header("Old Molecular Profiles with Annotation: ", paste0(annotation, collapse = "/"), length_of_line = 80)
+  lapply(names(old_ses), function(name){
+    message(paste0("SummarizedExperiment Name: ", name))
+    display_se_info(old_ses[[name]])
+  }) |> invisible()
+  if(length(old_ses) == 0){
+    message("No old molecular profiles with annotation")
+  }
+  print_header("New Molecular Profiles with Annotation: ", paste0(annotation, collapse = "/"), length_of_line = 80)
+  lapply(names(new_ses), function(name){
+    message(paste0("SummarizedExperiment Name: ", name))
+    display_se_info(new_ses[[name]])
+  }) |> invisible()
+  if(length(new_ses) == 0){
+    message("No new molecular profiles with annotation")
+  }
+}
+
+
+
+display_tre <- function(tre){
+  if(is.list(tre)){
+    tr <- data.table::as.data.table(tre$info)
+    message("Old Treatment Response is a list of DataFrames")
+    print(paste0("Number of treatments: ", tr[,uniqueN(treatmentid)]))
+    print(paste0("Number of samples: ", tr[,uniqueN(sampleid)]))
+    print(paste0("Total number of experiments: ", dim(tre$raw)[1]))
+
+    print("Profiles DataFrame: ")
+    print(head(tre$profiles))
+  }
+  else if(class(tre) == "TreatmentResponseExperiment"){
+    message("New Treatment Response is a TreatmentResponseExperiment")
+    print(paste0("Number of treatments: ", tre@rowData[,uniqueN(treatmentid)]))
+    print(paste0("Number of samples: ", tre@colData[,uniqueN(sampleid)]))
+    print(paste0("Total number of experiments: ", dim(tre$sensitivity)[1]))
+
+    print("Profiles/Summary Assay: ")
+    # if there is a "profiles" assay
+    if("profiles" %in% SummarizedExperiment::assayNames(tre)){
+      print(head(tre$profiles))
+    }
+    else if("summary" %in% SummarizedExperiment::assayNames(tre)){
+      print(head(tre$summary))
+    }
+    else{
+      print("No profiles or summary assay")
+    }
+  }
+}
+
+
+compare_treatmentResponse <- function(old, new){
+  print_header("Old Treatment Response", length_of_line = 80)
+  display_tre(old)
+
+  print_header("New Treatment Response", length_of_line = 80)
+  display_tre(new)
+
+}
+
+
+```
+
+
+
+### MolecularProfiles
+
+
+```{r, echo=FALSE}
+old_molecular <- PharmacoGx::molecularProfiles(CCLE)
+new_molecular <- PharmacoGx::molecularProfiles(new_CCLE)
+```
+
+#### RNA / Microarray
+
+```{r microarray, echo=FALSE}
+display_molecular_by_annotation(old_molecular, new_molecular, c("microarray", "rna"))
+```
+
+#### RNASeq
+
+```{r rnaseq, echo=FALSE}
+display_molecular_by_annotation(old_molecular, new_molecular, "rnaseq")
+```
+
+
+#### CNV
+
+```{r cnv, echo=FALSE}
+display_molecular_by_annotation(old_molecular, new_molecular, "cnv")
+```
+
+
+#### Mutation
+
+```{r mutation, echo=FALSE}
+display_molecular_by_annotation(old_molecular, new_molecular, c("mutation", "mut"))
+```
+
+
+### TreatmentResponse
+
+```{r treatment_response, echo=FALSE}
+
+old_treatmentResponse <- PharmacoGx::treatmentResponse(CCLE)
+new_treatmentResponse <- PharmacoGx::treatmentResponse(new_CCLE)
+
+
+compare_treatmentResponse(old_treatmentResponse, new_treatmentResponse)
+```
+
+
+## GDSC Logs
+
+### NEW GDSC PSet
+```{r quick_view_GDSC_new, echo=FALSE}
+show(new_GDSC)
+```
+
+### OLD GDSC PSet
+```{r quick_view_GDSC_old, echo=FALSE}
+GDSC <- PharmacoGx::updateObject(GDSC)
+show(GDSC)
+```
+
+### SampleInfo
+
+**Old Sample Info**
+```{r sampleinfo_old_GDSC, echo=FALSE}
+print_sample_info(GDSC, "Old")
+```
+
+**New Sample Info**
+```{r sampleinfo_new_GDSC, echo=FALSE}
+print_sample_info(new_GDSC, "New")
+```
+
+### TreatmentInfo
+
+**Old Treatment Info**
+```{r treatmentinfo_old_GDSC, echo=FALSE}
+print_treatment_info(GDSC, "Old")
+```
+
+**New Treatment Info**
+```{r treatmentinfo_new_GDSC, echo=FALSE}
+print_treatment_info(new_GDSC, "New")
+```
+
+### MolecularProfiles
+
+```{r, echo=FALSE}
+old_molecular <- PharmacoGx::molecularProfiles(GDSC)
+new_molecular <- PharmacoGx::molecularProfiles(new_GDSC)
+```
+
+#### RNA / Microarray
+
+```{r microarray_GDSC, echo=FALSE}
+display_molecular_by_annotation(old_molecular, new_molecular, c("microarray", "rna"))
+```
+
+#### RNASeq
+
+
+```{r rnaseq_GDSC, echo=FALSE}
+display_molecular_by_annotation(old_molecular, new_molecular, "rnaseq")
+```
+
+#### CNV
+
+```{r cnv_GDSC, echo=FALSE}
+display_molecular_by_annotation(old_molecular, new_molecular, "cnv")
+```
+
+#### Mutation
+
+```{r mutation_GDSC, echo=FALSE}
+display_molecular_by_annotation(old_molecular, new_molecular, c("mutation", "mut"))
+```
+
+### TreatmentResponse
+
+```{r treatment_response_GDSC, echo=FALSE}
+old_treatmentResponse <- PharmacoGx::treatmentResponse(GDSC)
+new_treatmentResponse <- PharmacoGx::treatmentResponse(new_GDSC)
+```
+
+```{r treatment_response_GDSC_compare, echo=FALSE}
+compare_treatmentResponse(old_treatmentResponse, new_treatmentResponse)
+```
+
+
+
+## gCSI Logs
+
+### NEW gCSI PSet
+```{r quick_view_gCSI_new, echo=FALSE}
+show(new_gCSI)
+```
+
+### OLD gCSI PSet
+
+```{r quick_view_gCSI_old, echo=FALSE}
+gCSI <- PharmacoGx::updateObject(gCSI)
+show(gCSI)
+```
+
+### SampleInfo
+
+**Old Sample Info**
+```{r sampleinfo_old_gCSI, echo=FALSE}
+print_sample_info(gCSI, "Old")
+```
+
+**New Sample Info**
+```{r sampleinfo_new_gCSI, echo=FALSE}
+print_sample_info(new_gCSI, "New")
+```
+
+### TreatmentInfo
+
+**Old Treatment Info**
+```{r treatmentinfo_old_gCSI, echo=FALSE}
+print_treatment_info(gCSI, "Old")
+```
+
+**New Treatment Info**
+```{r treatmentinfo_new_gCSI, echo=FALSE}
+print_treatment_info(new_gCSI, "New")
+```
+
+### MolecularProfiles
+
+```{r, echo=FALSE}
+old_molecular <- PharmacoGx::molecularProfiles(gCSI)
+new_molecular <- PharmacoGx::molecularProfiles(new_gCSI)
+```
+
+#### RNA / Microarray
+
+```{r microarray_gCSI, echo=FALSE}
+display_molecular_by_annotation(old_molecular, new_molecular, c("microarray", "rna"))
+```
+
+
+#### RNASeq
+
+```{r rnaseq_gCSI, echo=FALSE}
+display_molecular_by_annotation(old_molecular, new_molecular, "rnaseq")
+```
+
+
+#### CNV
+```{r cnv_gCSI, echo=FALSE}
+display_molecular_by_annotation(old_molecular, new_molecular, "cnv")
+```
+
+#### Mutation
+```{r mutation_gCSI, echo=FALSE}
+display_molecular_by_annotation(old_molecular, new_molecular, c("mutation", "mut"))
+```
+
+### TreatmentResponse
+
+```{r treatment_response_gCSI, echo=FALSE}
+old_treatmentResponse <- PharmacoGx::treatmentResponse(gCSI)
+new_treatmentResponse <- PharmacoGx::treatmentResponse(new_gCSI)
+```
+
+```{r treatment_response_gCSI_compare, echo=FALSE}
+compare_treatmentResponse(old_treatmentResponse, new_treatmentResponse)
+```

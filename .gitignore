@@ -1,0 +1,17 @@
+CCLE
+GDSC
+gCSI
+DEPMAP
+data/*
+.deprecated
+
+
+*.excalidraw
+
+
+# pixi environments
+.pixi
+*.egg-info
+
+PSet-Update_Logs_cache/*
+cache/
