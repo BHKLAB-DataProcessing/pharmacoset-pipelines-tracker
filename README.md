@@ -19,3 +19,9 @@ pixi run setup
 ```bash
 pixi run build
 ```
+
+This will create an `index.html` file which you can open in a browser to view the page.
+
+Alternatively, if you push the changes to the repository, the github page will be automatically updated after a few minutes. 
+
+

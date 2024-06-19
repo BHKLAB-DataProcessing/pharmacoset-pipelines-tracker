@@ -318,6 +318,11 @@ display_molecular_by_annotation(old_molecular, new_molecular, c("microarray", "r
 
 #### RNASeq
 
+for the **OLD CCLE RNASeq data**, the data is transformed as follows:
+based on [the orcestra page for CCLE](https://www.orcestra.ca/pset/10.5281/zenodo.3905461)
+- `Gene TPM Values:	After estimation by the tool detailed above, gene TPM values are transformed by log2(x + 0.001).`
+- `Gene Count Values:	After estimation by the tool detailed above, gene count values are transformed by log2(x + 1).`
+
 ```{R rnaseq, echo=FALSE}
 display_molecular_by_annotation(old_molecular, new_molecular, "rnaseq")
 ```
@@ -401,6 +406,10 @@ display_molecular_by_annotation(old_molecular, new_molecular, c("microarray", "r
 
 #### RNASeq
 
+for the **OLD GDSC RNASeq data**, the data is transformed as follows:
+based on [the orcestra page for GDSC](https://www.orcestra.ca/pset/10.5281/zenodo.5787145)
+- `Gene TPM Values:	After estimation by the tool detailed above, gene TPM values are transformed by log2(x + 0.001).`
+- `Gene Count Values:	After estimation by the tool detailed above, gene count values are transformed by log2(x + 1).`
 
 ```{R rnaseq_GDSC, echo=FALSE}
 display_molecular_by_annotation(old_molecular, new_molecular, "rnaseq")
@@ -484,6 +493,11 @@ display_molecular_by_annotation(old_molecular, new_molecular, c("microarray", "r
 
 
 #### RNASeq
+
+for the **OLD gCSI RNASeq data**, the data is transformed as follows:
+based on [the orcestra page for gCSI](https://www.orcestra.ca/pset/10.5281/zenodo.7829857)
+- `Gene TPM Values:	After estimation by the tool detailed above, gene TPM values are transformed by log2(x + 0.001).`
+- `Gene Count Values:	After estimation by the tool detailed above, gene count values are transformed by log2(x + 1).`
 
 ```{R rnaseq_gCSI, echo=FALSE}
 display_molecular_by_annotation(old_molecular, new_molecular, "rnaseq")
