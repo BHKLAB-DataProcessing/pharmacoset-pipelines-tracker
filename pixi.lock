@@ -19,7 +19,6 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/babel-2.14.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/beautifulsoup4-4.12.3-pyha770c72_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/binutils_impl_linux-64-2.40-ha1999f0_7.conda
-      - conda: https://conda.anaconda.org/bioconda/noarch/bioconductor-biocstyle-2.30.0-r43hdfd78af_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/noarch/bleach-6.1.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/brotli-python-1.1.0-py312h30efb56_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/bwidget-1.9.14-ha770c72_1.tar.bz2
@@ -172,11 +171,9 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/r-backports-1.5.0-r43hb1dbf0f_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/r-base-4.3.3-h8ee917f_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/r-base64enc-0.1_3-r43h57805ef_1006.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/r-biocmanager-1.30.23-r43hc72bb7e_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/r-bit-4.0.5-r43h57805ef_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/r-bit64-4.0.5-r43h57805ef_2.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-blob-1.2.4-r43hc72bb7e_1.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/r-bookdown-0.39-r43hc72bb7e_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-boot-1.3_30-r43hc72bb7e_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-broom-1.0.6-r43hc72bb7e_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-bslib-0.7.0-r43hc72bb7e_0.conda
@@ -278,7 +275,6 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-pillar-1.9.0-r43hc72bb7e_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-pkgconfig-2.0.3-r43hc72bb7e_3.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/r-plyr-1.8.9-r43ha503ecb_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/r-prettydoc-0.4.1-r43hc72bb7e_2.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-prettyunits-1.2.0-r43hc72bb7e_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/r-proc-1.18.5-r43ha503ecb_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/r-processx-3.8.4-r43h57805ef_0.conda
@@ -418,7 +414,6 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/attrs-23.2.0-pyh71513ae_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/babel-2.14.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/beautifulsoup4-4.12.3-pyha770c72_0.conda
-      - conda: https://conda.anaconda.org/bioconda/noarch/bioconductor-biocstyle-2.30.0-r43hdfd78af_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/noarch/bleach-6.1.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-64/brotli-python-1.1.0-py312heafc425_1.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-64/bwidget-1.9.14-h694c41f_1.tar.bz2
@@ -582,11 +577,9 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-64/r-backports-1.5.0-r43h6b9d099_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-64/r-base-4.3.3-h2f142dd_2.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-64/r-base64enc-0.1_3-r43h6dc245f_1006.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/r-biocmanager-1.30.23-r43hc72bb7e_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-64/r-bit-4.0.5-r43h6dc245f_1.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-64/r-bit64-4.0.5-r43h6dc245f_2.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-blob-1.2.4-r43hc72bb7e_1.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/r-bookdown-0.39-r43hc72bb7e_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-boot-1.3_30-r43hc72bb7e_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-broom-1.0.6-r43hc72bb7e_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-bslib-0.7.0-r43hc72bb7e_0.conda
@@ -688,7 +681,6 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-pillar-1.9.0-r43hc72bb7e_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-pkgconfig-2.0.3-r43hc72bb7e_3.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-64/r-plyr-1.8.9-r43hac7d2d5_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/r-prettydoc-0.4.1-r43hc72bb7e_2.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/r-prettyunits-1.2.0-r43hc72bb7e_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-64/r-proc-1.18.5-r43h64b2c41_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-64/r-processx-3.8.4-r43hb2c329c_0.conda
@@ -1051,25 +1043,6 @@ packages:
   license_family: GPL
   size: 6250821
   timestamp: 1718625666382
-- kind: conda
-  name: bioconductor-biocstyle
-  version: 2.30.0
-  build: r43hdfd78af_0
-  subdir: noarch
-  noarch: generic
-  url: https://conda.anaconda.org/bioconda/noarch/bioconductor-biocstyle-2.30.0-r43hdfd78af_0.tar.bz2
-  sha256: 97fc205acf21a78a25d1644a7bd09ed6ec343d9b97d97a9505e2a2097f19259e
-  md5: 2fdfd5cd16c84e0d71d7ffb3be4e54d3
-  depends:
-  - r-base >=4.3,<4.4.0a0
-  - r-biocmanager
-  - r-bookdown
-  - r-knitr >=1.30
-  - r-rmarkdown >=1.2
-  - r-yaml
-  license: Artistic-2.0
-  size: 886254
-  timestamp: 1701638044096
 - kind: conda
   name: bleach
   version: 6.1.0
@@ -5205,21 +5178,6 @@ packages:
   size: 44498
   timestamp: 1686703843433
 - kind: conda
-  name: r-biocmanager
-  version: 1.30.23
-  build: r43hc72bb7e_0
-  subdir: noarch
-  noarch: generic
-  url: https://conda.anaconda.org/conda-forge/noarch/r-biocmanager-1.30.23-r43hc72bb7e_0.conda
-  sha256: 56146dade42a1e00d8cda2aa4720d3c2e3ac39f55e4423b41ffbe9c3704a20c7
-  md5: 883b5b2e01cdcd6397a5ff03ca3f31f2
-  depends:
-  - r-base >=4.3,<4.4.0a0
-  license: Artistic-2.0
-  license_family: OTHER
-  size: 484836
-  timestamp: 1714813996498
-- kind: conda
   name: r-bit
   version: 4.0.5
   build: r43h57805ef_1
@@ -5301,28 +5259,6 @@ packages:
   license_family: GPL3
   size: 65758
   timestamp: 1686770504459
-- kind: conda
-  name: r-bookdown
-  version: '0.39'
-  build: r43hc72bb7e_0
-  subdir: noarch
-  noarch: generic
-  url: https://conda.anaconda.org/conda-forge/noarch/r-bookdown-0.39-r43hc72bb7e_0.conda
-  sha256: b208f65da5a693564c928f723aedde425b33558793bcbb5101e437b932f0d3a0
-  md5: 67ece32cfd2c01624050dfdd1933e6fe
-  depends:
-  - r-base >=4.3,<4.4.0a0
-  - r-htmltools >=0.3.6
-  - r-jquerylib
-  - r-knitr >=1.31
-  - r-rmarkdown >=2.9
-  - r-tinytex >=0.12
-  - r-xfun >=0.22
-  - r-yaml >=2.1.19
-  license: GPL-3.0-only
-  license_family: GPL3
-  size: 1039804
-  timestamp: 1713232309229
 - kind: conda
   name: r-boot
   version: 1.3_30
@@ -8080,23 +8016,6 @@ packages:
   license_family: MIT
   size: 820457
   timestamp: 1696237621413
-- kind: conda
-  name: r-prettydoc
-  version: 0.4.1
-  build: r43hc72bb7e_2
-  build_number: 2
-  subdir: noarch
-  noarch: generic
-  url: https://conda.anaconda.org/conda-forge/noarch/r-prettydoc-0.4.1-r43hc72bb7e_2.conda
-  sha256: 60bb7aa19e44ec2468e14bfb0eb440259ad20f7a1da77aeb507103892f291be2
-  md5: edb147bb6a3ebcd33410d7217ab68e54
-  depends:
-  - r-base >=4.3,<4.4.0a0
-  - r-rmarkdown >=1.0
-  license: Apache-2.0
-  license_family: APACHE
-  size: 655947
-  timestamp: 1686986877476
 - kind: conda
   name: r-prettyunits
   version: 1.2.0

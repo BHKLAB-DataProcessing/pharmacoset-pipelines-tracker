@@ -8,15 +8,13 @@ platforms = ["linux-64", "osx-64"]
 
 [tasks]
 
-
 [dependencies]
-radian = ">=0.6.12,<0.7"
 r-base = ">=4.3.3,<4.4"
+radian = ">=0.6.12,<0.7"
 r-essentials = ">=4.3,<5"
 r-rmarkdown = ">=2.27,<3"
 r-qs = ">=0.26.3,<0.27"
-bioconductor-biocstyle = ">=2.30.0,<2.31"
-r-prettydoc = ">=0.4.1,<0.5"
+
 
 [tasks.setup]
 cmd = "Rscript scripts/setup.R"
@@ -25,6 +23,7 @@ description = "Install R packages and setup the environment"
 [tasks.build]
 cmd = "Rscript scripts/build.R"
 description = "Build the project"
+depends-on = ["setup"]
 
 [system-requirements]
 linux = "5.4.203"
