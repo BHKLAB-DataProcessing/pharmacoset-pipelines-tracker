@@ -22,5 +22,9 @@ r-prettydoc = ">=0.4.1,<0.5"
 cmd = "Rscript scripts/setup.R"
 description = "Install R packages and setup the environment"
 
+[tasks.build]
+cmd = "Rscript -e 'rmarkdown::render(`PSet-Update_Logs.rmd`, output_file = `index.html`)'"
+description = "Build the project"
+
 [system-requirements]
 linux = "5.4.203"
