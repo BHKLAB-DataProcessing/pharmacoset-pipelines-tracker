@@ -1,0 +1,15 @@
+9.5K	./cache
+9.5K	./scripts
+32K	./PSet-Update_Logs_cache
+2.1M	./.git
+3.0M	./DEPMAP
+5.3M	./.deprecated
+2.0G	./.pixi
+2.1G	./sandbox
+2.1G	./update_pset_pipeline
+8.9G	./CCLE
+21G	./data
+70G	./gCSI
+95G	./GDSC
+200G	.
+200G	total
